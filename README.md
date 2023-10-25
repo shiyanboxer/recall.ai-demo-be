@@ -27,19 +27,16 @@ This is a simple web application that showcases the [Recall.ai](https://www.reca
 ## Project Structure
 The project is divided into two separate repositories: the frontend repository and the backend repository.
 
-<!-- QUICKSTART -->
-## Quickstart
-
-To get your project running locally, follow these steps.
-
 <!-- PREREQUISITES -->
 ### Prerequisites
 * **Python 3.10** - Installation guide found [here](https://www.python.org/downloads/).
 * **pip** - Installation guide found [here](https://pip.pypa.io/en/stable/installation/).
 * **ngrok** - Installation guide found [here](https://ngrok.com/).
 
-<!-- SETUP -->
-### Setup
+<!-- QUICKSTART -->
+## Quickstart
+
+To get your project running locally, follow these steps.
 1. **Generate an API Key**
 
    Go to the Recall dashboard and generate an [API Key](https://www.recall.ai/).
