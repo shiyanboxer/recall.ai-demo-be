@@ -25,12 +25,92 @@ This is a simple web application that showcases the [Recall.ai](https://www.reca
 - os
 - CORS
 
-<!-- PROJECT -->
+<!-- PROJECT STRUCTURE -->
 ## Project Structure
-The project is divided into two separate repositories: the frontend repository and the backend repository.
+
+Below is an overview of the project structure.
+
+- **app.py**: This is the main application file containing the Flask app and the defined routes.
+
+- **transcript.py**: This script defines a Flask application that listens for POST requests at the /meeting_transcript endpoint. It processes incoming JSON data, extracts speaker-transcript pairs, and prints them to the console. It is typically used for handling real-time meeting transcription data.
+
+- **requirements.txt**: This file lists the Python packages required for this project. You can generate this file using `pip freeze > requirements.txt` to capture the dependencies.
+
+- **.env**: You can store your environment variables here, including `RECALL_API_KEY` and `WEBHOOK_URL`. Make sure to add this file to your `.gitignore` to keep sensitive data secure.
+
+- **README.md**: This file provides documentation and instructions for running the application. You can include descriptions of the endpoints, how to set up environment variables, and how to run the application.
+
+- **.gitignore**: This file is used to specify which files or directories should be ignored by version control. You should include `.env` and `venv/` in the `.gitignore` file to prevent sensitive data and virtual environments from being committed to your repository.
+
+- **LICENSE**: If you want to specify the licensing terms for your project, you can include a LICENSE file with the chosen license's text.
+
+
+<!-- API DOCUMENTATION -->
+## API Documentation
+
+This API provides endpoints for interacting with the Recall.ai service. Before using these endpoints, ensure that you have set the necessary environment variables (`RECALL_API_KEY` and `WEBHOOK_URL`).
+
+### 1. Connect Bot
+
+- **Endpoint**: `/`
+- **Method**: POST
+- **Description**: Connects a bot to a meeting, enabling real-time transcription.
+- **Request JSON Parameters**:
+  - `bot_name`: (string) The name of the bot.
+  - `meeting_url`: (string) The URL of the meeting.
+- **Response**:
+  - `id`: (int) The ID of the created bot.
+- **Status Codes**:
+  - 200: Success.
+  - 400: Bad Request - Missing `bot_name` or `meeting_url`.
+  - 500: Internal Server Error.
+
+### 2. Disconnect from Meeting
+
+- **Endpoint**: `/disconnect`
+- **Method**: POST
+- **Description**: Disconnects the bot from a meeting.
+- **Request JSON Parameters**:
+  - `meeting_id`: (int) The ID of the meeting to disconnect from.
+- **Status Codes**:
+  - 200: Success.
+  - 500: Internal Server Error (if an error occurs).
+
+### 3. Pause Recording
+
+- **Endpoint**: `/pause`
+- **Method**: POST
+- **Description**: Pauses the recording of a meeting.
+- **Request JSON Parameters**:
+  - `meeting_id`: (int) The ID of the meeting to pause recording for.
+- **Status Codes**:
+  - 200: Success.
+  - 500: Internal Server Error (if an error occurs).
+
+### 4. Resume Recording
+
+- **Endpoint**: `/resume`
+- **Method**: POST
+- **Description**: Resumes the recording of a meeting.
+- **Request JSON Parameters**:
+  - `meeting_id`: (int) The ID of the meeting to resume recording for.
+- **Status Codes**:
+  - 200: Success.
+  - 500: Internal Server Error (if an error occurs).
+
+### 5. Meeting Transcript Webhook
+
+- **Endpoint**: `/meeting_transcript`
+- **Method**: POST
+- **Description**: Receives and processes real-time meeting transcription data. It extracts and prints speaker-transcript pairs.
+- **Request JSON Parameters**:
+  - `transcript`: (object) The transcription data.
+- **Status Codes**:
+  - 200: Success.
+
 
 <!-- PREREQUISITES -->
-### Prerequisites
+## Prerequisites
 * **Python 3.10** - Installation guide found [here](https://www.python.org/downloads/).
 * **pip** - Installation guide found [here](https://pip.pypa.io/en/stable/installation/).
 * **ngrok** - Installation guide found [here](https://ngrok.com/).
@@ -39,6 +119,7 @@ The project is divided into two separate repositories: the frontend repository a
 ## Quickstart
 
 To get your project running locally, follow these steps.
+
 1. **Generate an API Key**
 
    Go to the Recall dashboard and generate an [API Key](https://www.recall.ai/).
@@ -81,15 +162,6 @@ To get your project running locally, follow these steps.
       python app.py
    ```
 
-6. **Create a Meeting**
-
-   Create a meeting with Zoom or Google Meets. After creating the meeting, make sure to stay in the meeting and save the meeting URL.
-
-7. **Run the Frontend Server**
-
-   To connect your server to the client, you will need to follow the steps on the [Recall.ai Demo Frontend respoitory](https://github.com/shiyanboxer/recall.ai-demo-fe)
-
-
 <!-- USAGE -->
 ## Usage
 1. Generate a URL for your webhook using ngrok on our specified port (8000).
@@ -111,7 +183,7 @@ To get your project running locally, follow these steps.
    python app.py
    ```
 
-4. Once the service is running open start your client server
+4. Once the service is running, start your client server. (You will need to follow the steps on the [Recall.ai Demo Frontend respoitory](https://github.com/shiyanboxer/recall.ai-demo-fe) to set this up)
 
    ```bash
    npm run dev
