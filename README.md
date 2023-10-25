@@ -118,7 +118,7 @@ To get your project running locally, follow these steps.
 5. Open http://localhost:3000/ to see the project
 
 ## References
-- Recall documentation: https://recallai.readme.io/reference/recall-overview
+Recall documentation: https://recallai.readme.io/reference/recall-overview
 
 ## Contact
 If you have any questions, please reach out to shiyanboxer@gmail.com. 
