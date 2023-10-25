@@ -200,6 +200,7 @@ To get your project running locally, follow these steps.
 ![Admit bot](https://github.com/shiyanboxer/recall.ai-demo-be/blob/main/img/MeetingAdmit.png)
 
 9. After clicking "Connect," you'll be directed to the Connected meeting page. Here, you can manage the bot and view the real-time meeting transcript.
+
 ![Bot connected](https://github.com/shiyanboxer/recall.ai-demo-be/blob/main/img/ConnectScreen.png)
 
 ## References
