@@ -121,7 +121,7 @@ To get your project running locally, follow these steps.
 
 7. Paste the meeting URL into the meeting link field and assign a name to the meeting bot in the name field. Afterward, click on "Connect."
 
-8. Grant access to the meeting bot in your session.
+8. Admit the meeting bot in your meeting.
 
 9. After clicking "Connect," you'll be directed to the Connected meeting page. Here, you can manage the bot and view the real-time meeting transcript.
 
