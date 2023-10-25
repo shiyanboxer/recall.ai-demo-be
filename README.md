@@ -4,8 +4,6 @@
 # About The Project
 This is a simple web application that showcases the [Recall.ai](https://www.recall.ai) in action. The project was developed using Python, Flask, React, Typescript, and the Recall.ai API. Users can input a bot name and a Google or Zoom meeting link, enabling the Recall.ai bot to join the meeting. Additionally, users have the capability to disconnect the meeting bot and pause and resume recordings.
 
-![Welcome Screen](https://github.com/shiyanboxer/recall.ai-demo-fe/blob/main/img/WelcomeScreen.png)
-
 <!-- FEATURES -->
 ## Features
 - **Create Bot**: The bot is generated when a valid meeting link and bot name are provided. This feature utilizes the [Create Bot endpoint](https://recallai.readme.io/reference/bot_create).
@@ -118,6 +116,15 @@ To get your project running locally, follow these steps.
    ```
 
 5. Open http://localhost:3000/ to see the project
+
+6. Create a Zoom or Google Meets meeting and copy the meeting URL
+
+7. Paste the meeting URL into the meeting link field and assign a name to the meeting bot in the name field. Afterward, click on "Connect."
+
+8. Grant access to the meeting bot in your session.
+
+9. After clicking "Connect," you'll be directed to the Connected meeting page. Here, you can manage the bot and view the real-time meeting transcript.
+
 
 ## References
 Recall documentation: https://recallai.readme.io/reference/recall-overview
